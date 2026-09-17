@@ -1,5 +1,5 @@
 
-# VRIP — Vendor Reliability Intelligence Platform
+# VRIP Vendor Reliability Intelligence Platform
 
 ## Project Overview
 
