@@ -1,24 +1,31 @@
 
-# VRIP — Vendor Reliability Intelligence Platform
+# VRIP - Vendor Reliability Intelligence Platform
+
+A full-stack vendor reliability and procurement management platform designed to help organizations monitor vendor performance, assess supplier risk, manage procurement operations, and gain actionable supply-chain insights.
+
+---
 
 ## Project Overview
 
-The **Vendor Reliability Intelligence Platform (VRIP)** is a full-stack web application designed to help organizations manage vendors, procurement activities, purchase orders, vendor performance, compliance, and supply-chain operations.
+**Vendor Reliability Intelligence Platform (VRIP)** is a full-stack web application developed using **Angular, FastAPI, and PostgreSQL**.
 
-The platform provides data-driven insights into vendor reliability and procurement risk through reliability scoring, analytics, reports, notifications, and audit tracking.
+The platform centralizes vendor management, procurement, purchase orders, vendor performance, reliability scoring, risk assessment, contracts, compliance, notifications, reporting, and supply-chain analytics in a single system.
+
+VRIP helps organizations monitor supplier performance and use structured data to support procurement and vendor-management activities.
 
 ---
 
 ## Objectives
 
-* Manage vendor information in a centralized system.
+* Centralize vendor and procurement information.
 * Monitor vendor performance and reliability.
+* Calculate vendor reliability scores.
+* Classify vendors according to risk levels.
 * Manage procurement requests and purchase orders.
-* Calculate vendor reliability and risk levels.
-* Monitor contracts and compliance.
-* Provide dashboards and analytics for decision-making.
+* Monitor vendor compliance and contracts.
+* Provide dashboards and analytical insights.
 * Generate reports and export business data.
-* Track system activities through notifications and audit logs.
+* Maintain notifications and audit records.
 * Analyze supply-chain and procurement data.
 
 ---
@@ -30,58 +37,59 @@ The platform provides data-driven insights into vendor reliability and procureme
 * User registration and login.
 * JWT-based authentication.
 * Role-based access control.
-* Protected application routes.
-* Secure API authorization.
+* Protected frontend routes.
+* Authorized backend API access.
 
 ### Vendor Management
 
-* Vendor registration.
-* Vendor information management.
+* Vendor registration and management.
+* Vendor contact and business information.
 * Vendor performance monitoring.
-* Vendor reliability score calculation.
-* Vendor risk-level classification.
-* Vendor status management.
+* Vendor reliability scoring.
+* Risk-level classification.
+* Vendor status tracking.
 
 ### Procurement Management
 
-* Create and manage procurement requests.
-* Track procurement status.
-* Associate procurement requests with vendors.
-* Monitor procurement budgets and quantities.
+* Procurement request creation and management.
+* Procurement status tracking.
+* Vendor association.
+* Budget and quantity management.
 
 ### Purchase Order Management
 
-* Create and manage purchase orders.
-* Assign purchase orders to vendors.
-* Track order status.
-* Monitor order amounts and delivery information.
-* Manage defective units and compliance information.
+* Purchase order creation and management.
+* Vendor and procurement association.
+* Order status tracking.
+* Order amount and delivery information.
+* Defective-unit tracking.
+* Compliance information.
 
-### Vendor Performance and Risk
+### Vendor Performance and Risk Assessment
 
-Vendor reliability is calculated using four performance factors:
+VRIP evaluates vendors using four major performance parameters:
 
 * Delivery Score
 * Quality Score
 * Payment Score
 * Compliance Score
 
-The platform calculates an overall reliability score and classifies vendors into risk levels.
+The platform calculates an overall reliability score based on these parameters and assigns an appropriate risk level.
 
 ### Contracts and Compliance
 
 * Contract management.
 * Compliance monitoring.
 * Vendor compliance tracking.
-* Contract-related information management.
+* Contract information management.
 
 ### Notifications and Audit Logs
 
-* System notifications.
+* System activity notifications.
 * Risk warnings.
-* Activity monitoring.
+* Operational alerts.
 * Audit log tracking.
-* Important operational alerts.
+* Activity monitoring.
 
 ### Reports and Analytics
 
@@ -89,82 +97,62 @@ The platform calculates an overall reliability score and classifies vendors into
 * Procurement reports.
 * Performance analytics.
 * Dashboard statistics.
-* Data export functionality.
+* Data export.
 * Supply-chain analytics.
 
 ### Supply Chain Analytics
 
-The platform provides supply-chain insights including:
+The platform provides analytical insights into:
 
-* Order status analysis.
+* Order status.
 * Supplier performance.
-* Product/category analysis.
-* Compliance analysis.
-* Defective-unit analysis.
-* Procurement value analysis.
+* Product and category distribution.
+* Compliance.
+* Defective units.
+* Procurement value.
 
 ---
 
 ## Technology Stack
 
-### Frontend
-
-* Angular
-* TypeScript
-* HTML5
-* CSS3
-* Chart.js
-* Angular Router
-* Angular HTTP Client
-* Route Guards
-* HTTP Interceptors
-
-### Backend
-
-* Python
-* FastAPI
-* SQLAlchemy
-* REST APIs
-* JWT Authentication
-* Role-Based Access Control
-* ReportLab
-* OpenPyXL
-
-### Database
-
-* PostgreSQL
-
-### Development Tools
-
-* Visual Studio Code
-* Git
-* GitHub
-* Swagger / OpenAPI
+| Layer             | Technologies                     |
+| ----------------- | -------------------------------- |
+| Frontend          | Angular, TypeScript, HTML5, CSS3 |
+| Visualization     | Chart.js                         |
+| Backend           | Python, FastAPI                  |
+| ORM               | SQLAlchemy                       |
+| Authentication    | JWT                              |
+| Authorization     | Role-Based Access Control        |
+| Database          | PostgreSQL                       |
+| Reporting         | ReportLab                        |
+| Data Export       | OpenPyXL                         |
+| API Documentation | Swagger / OpenAPI                |
+| Version Control   | Git and GitHub                   |
 
 ---
 
 ## Vendor Reliability Scoring
 
-The platform evaluates vendor reliability using four performance parameters:
+VRIP evaluates vendor reliability using four performance factors:
 
-| Parameter        | Description                           |
-| ---------------- | ------------------------------------- |
-| Delivery Score   | Measures delivery performance         |
-| Quality Score    | Measures product/service quality      |
-| Payment Score    | Measures payment-related performance  |
-| Compliance Score | Measures compliance with requirements |
+| Parameter        | Description                            |
+| ---------------- | -------------------------------------- |
+| Delivery Score   | Evaluates delivery performance         |
+| Quality Score    | Evaluates product or service quality   |
+| Payment Score    | Evaluates payment-related performance  |
+| Compliance Score | Evaluates compliance with requirements |
 
-The overall reliability score is calculated using the average of these four scores.
+The overall reliability score is calculated as the average of these four performance scores.
 
 ### Risk Classification
 
 | Reliability Score | Risk Level |
-| ----------------- | ---------- |
-| 80–100            | Low        |
-| 50–79.99          | Medium     |
-| Below 50          | High       |
+| ----------------: | ---------- |
+|          80 - 100 | Low        |
+|        50 - 79.99 | Medium     |
+|          Below 50 | High       |
 
-This classification helps organizations identify vendors that may require additional monitoring.
+This classification allows organizations to identify vendors that may require additional monitoring.
 
 ---
 
@@ -172,7 +160,6 @@ This classification helps organizations identify vendors that may require additi
 
 ```text
                     VRIP PLATFORM
-
                          |
           +--------------+--------------+
           |                             |
@@ -184,14 +171,15 @@ This classification helps organizations identify vendors that may require additi
           +--------------+--------------+
                          |
                     PostgreSQL
-                     Database
+                      Database
                          |
           +--------------+--------------+
           |              |               |
-       Vendors       Procurement    Analytics
+       Vendors       Procurement     Analytics
           |              |               |
-       Purchase       Reports        Risk Analysis
-       Orders        Notifications   Supply Chain
+   Vendor Risk      Purchase Orders   Reports
+                                      |
+                               Supply Chain
 ```
 
 ---
@@ -227,13 +215,69 @@ VRIP-Vendor-Reliability-Intelligence-Platform/
 
 ---
 
+## Application Modules
+
+The platform is organized into the following major modules:
+
+1. **Authentication**
+2. **Dashboard**
+3. **Vendor Management**
+4. **Procurement Management**
+5. **Purchase Order Management**
+6. **Vendor Performance**
+7. **Risk Assessment**
+8. **Contracts and Compliance**
+9. **Notifications**
+10. **Audit Logs**
+11. **Reports**
+12. **Analytics**
+13. **Supply Chain Analytics**
+
+---
+
+## Application Workflow
+
+```text
+User
+ |
+ v
+Authentication
+ |
+ v
+Dashboard
+ |
+ +-------------------+
+ |                   |
+ v                   v
+Vendors          Procurement
+ |                   |
+ v                   v
+Risk Assessment   Purchase Orders
+ |                   |
+ +---------+---------+
+           |
+           v
+    Performance Analytics
+           |
+           v
+      Reports & Exports
+           |
+           v
+ Notifications & Audit Logs
+           |
+           v
+   Supply Chain Insights
+```
+
+---
+
 ## Installation and Setup
 
 ### Prerequisites
 
-Install the following software before running the project:
+Install the following before running the project:
 
-* Python 3.12 or later
+* Python 3.12+
 * Node.js
 * Angular CLI
 * PostgreSQL
@@ -244,13 +288,13 @@ Install the following software before running the project:
 
 ## Backend Setup
 
-Open a terminal and navigate to the backend directory:
+Navigate to the backend directory:
 
 ```bash
 cd backend
 ```
 
-Create and activate a Python virtual environment:
+Create a virtual environment:
 
 ```bash
 python -m venv venv
@@ -262,21 +306,21 @@ Activate the virtual environment on Windows:
 venv\Scripts\activate
 ```
 
-Install the required Python packages:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Configure the database connection and required environment variables.
+Configure the PostgreSQL database and required environment variables.
 
-Start the FastAPI backend:
+Start the FastAPI server:
 
 ```bash
 python -m uvicorn app.main:app --reload
 ```
 
-The backend will run at:
+Backend URL:
 
 ```text
 http://127.0.0.1:8000
@@ -284,7 +328,7 @@ http://127.0.0.1:8000
 
 ### API Documentation
 
-FastAPI Swagger documentation is available at:
+Swagger API documentation:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -294,13 +338,13 @@ http://127.0.0.1:8000/docs
 
 ## Frontend Setup
 
-Open another terminal and navigate to the frontend directory:
+Open a new terminal and navigate to the frontend:
 
 ```bash
 cd frontend
 ```
 
-Install the required Node.js packages:
+Install dependencies:
 
 ```bash
 npm install
@@ -312,7 +356,7 @@ Start the Angular development server:
 ng serve
 ```
 
-The frontend will run at:
+Frontend URL:
 
 ```text
 http://localhost:4200
@@ -320,58 +364,24 @@ http://localhost:4200
 
 ---
 
-## Application Workflow
-
-```text
-User
-  |
-  v
-Login / Registration
-  |
-  v
-Dashboard
-  |
-  +------------------+
-  |                  |
-  v                  v
-Vendors          Procurement
-  |                  |
-  v                  v
-Vendor Risk      Purchase Orders
-  |                  |
-  +--------+---------+
-           |
-           v
-     Analytics & Reports
-           |
-           v
- Notifications & Audit Logs
-           |
-           v
-     Supply Chain Insights
-```
-
----
-
 ## Security
 
-The platform implements security features including:
+The application includes:
 
 * JWT-based authentication.
-* Password-based user authentication.
 * Role-based authorization.
 * Protected Angular routes.
 * HTTP authorization interceptors.
 * Backend API authorization.
-* Restricted access to sensitive operations.
+* Restricted access to protected operations.
+
+Sensitive configuration values should be stored in environment variables and should not be committed to the repository.
 
 ---
 
 ## Reporting and Analytics
 
-VRIP provides reporting and analytical capabilities for monitoring business operations.
-
-Reports and dashboards can provide information related to:
+VRIP provides reporting and analytics for:
 
 * Vendor reliability.
 * Vendor risk levels.
@@ -382,30 +392,29 @@ Reports and dashboards can provide information related to:
 * Supply-chain operations.
 * System activities.
 
-Reports can also be exported for further analysis.
+The platform also supports exporting selected business information for further analysis.
 
 ---
 
 ## Future Enhancements
 
-Possible future improvements include:
+Planned improvements may include:
 
-* Advanced predictive vendor-risk analysis.
-* Machine-learning-based vendor reliability prediction.
+* Machine-learning-based vendor risk prediction.
+* Advanced supplier benchmarking.
 * Automated email notifications.
-* Advanced supplier performance benchmarking.
 * Cloud deployment.
 * Docker containerization.
-* Enhanced data visualization.
-* Automated scheduled reports.
 * Advanced procurement forecasting.
+* Automated scheduled reports.
+* Enhanced predictive analytics.
+* Expanded supply-chain intelligence.
 
 ---
 
-## Repository
+## GitHub Repository
 
-**GitHub Repository:**
-
+**Repository:**
 https://github.com/Hrishi18162/VRIP-Vendor-Reliability-Intelligence-Platform
 
 ---
@@ -414,4 +423,11 @@ https://github.com/Hrishi18162/VRIP-Vendor-Reliability-Intelligence-Platform
 
 **Hrishitha Kotte**
 
-Vendor Reliability Intelligence Platform — Full Stack Development Project
+Full Stack Development Project
+Vendor Reliability Intelligence Platform
+
+---
+
+## License
+
+This project is developed for educational and project demonstration purposes.
