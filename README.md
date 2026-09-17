@@ -33,7 +33,7 @@ The platform provides data-driven insights into vendor reliability and procureme
 
 ### Vendor Management
 
-* Vendor registration
+* Vendor registration and management
 * Vendor information management
 * Vendor performance monitoring
 * Reliability score calculation
@@ -100,7 +100,7 @@ The platform provides data-driven insights into vendor reliability and procureme
 
 ### Frontend
 
-The frontend is developed using **Angular** and provides the user interface for managing vendors, procurement, purchase orders, reports, notifications, and analytics.
+The frontend is developed using **Angular** and provides the user interface for vendor management, procurement, purchase orders, reports, notifications, and analytics.
 
 **Technologies:**
 
@@ -173,7 +173,7 @@ The overall reliability score is calculated using the average of these performan
       Angular                       FastAPI
       Frontend                      Backend
           |                             |
-          |                       REST APIs
+          |                         REST APIs
           |                             |
           +-------------+---------------+
                         |
@@ -228,9 +228,7 @@ Install the following software before running the project:
 * PostgreSQL
 * Git
 
----
-
-## Backend Setup
+### Backend Setup
 
 Open a terminal and navigate to the backend directory:
 
@@ -274,11 +272,9 @@ API documentation:
 http://127.0.0.1:8000/docs
 ```
 
----
+### Frontend Setup
 
-## Frontend Setup
-
-Open another terminal and navigate to the frontend:
+Open another terminal and navigate to the frontend directory:
 
 ```bash
 cd frontend
@@ -304,7 +300,7 @@ http://localhost:4200
 
 ---
 
-## Application Modules
+## Application Workflow
 
 ```text
 Login / Registration
@@ -378,8 +374,7 @@ Reports can also be exported for further analysis.
 
 ## Repository
 
-**GitHub Repository:**
-
+**GitHub:**
 https://github.com/Hrishi18162/VRIP-Vendor-Reliability-Intelligence-Platform
 
 ---
