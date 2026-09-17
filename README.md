@@ -3,30 +3,96 @@
 
 ## Project Overview
 
-**Vendor Reliability Intelligence Platform (VRIP)** is a full-stack web application designed to help organizations manage vendors, procurement activities, purchase orders, vendor performance, reliability scores, risk levels, contracts, notifications, reports, and supply-chain analytics through a centralized platform.
+**Vendor Reliability Intelligence Platform (VRIP)** is a full-stack web application designed to help organizations manage vendors, procurement activities, purchase orders, vendor performance, reliability scores, risk levels, contracts, compliance, notifications, reports, and supply-chain analytics through a centralized platform.
 
-The system provides data-driven insights into vendor reliability and procurement operations, helping organizations monitor supplier performance and identify potential operational risks.
+The platform provides data-driven insights into vendor reliability and procurement operations, helping organizations monitor supplier performance and identify potential operational risks.
+
+---
+
+## Objectives
+
+* Centralize vendor and procurement information.
+* Monitor vendor reliability and performance.
+* Calculate vendor reliability scores.
+* Classify vendors based on risk levels.
+* Manage procurement requests and purchase orders.
+* Monitor vendor compliance and performance.
+* Provide reports and analytical insights.
+* Support supply-chain monitoring and decision-making.
 
 ---
 
 ## Key Features
 
-* User Registration and Login
-* JWT-based Authentication
+### Authentication & Authorization
+
+* User registration and login
+* JWT-based authentication
 * Role-Based Access Control (RBAC)
-* Vendor Registration and Management
-* Vendor Reliability Scoring
-* Vendor Risk-Level Classification
-* Procurement Request Management
-* Purchase Order Management
-* Vendor Performance Monitoring
-* Contract and Compliance Monitoring
-* Notifications and Alerts
-* Audit Log Management
-* Reports and Analytics
-* Supply Chain Analytics Dashboard
-* Excel Report Export
-* Dashboard with Key Procurement and Vendor Metrics
+* Protected application routes
+
+### Vendor Management
+
+* Vendor registration
+* Vendor information management
+* Vendor performance monitoring
+* Reliability score calculation
+* Risk-level classification
+
+### Procurement Management
+
+* Procurement request creation
+* Vendor assignment
+* Budget and quantity management
+* Procurement status tracking
+
+### Purchase Order Management
+
+* Purchase order creation
+* Vendor and procurement association
+* Order amount and quantity tracking
+* Delivery status monitoring
+* Purchase order status management
+
+### Vendor Performance & Risk
+
+* Delivery performance
+* Quality performance
+* Payment performance
+* Compliance performance
+* Overall reliability score
+* Low, Medium, and High risk classification
+
+### Contracts & Compliance
+
+* Contract monitoring
+* Vendor compliance tracking
+* Compliance status management
+
+### Notifications & Audit Logs
+
+* System notifications
+* Risk warnings
+* Critical alerts
+* Activity monitoring
+* Audit log tracking
+
+### Reports & Analytics
+
+* Vendor reports
+* Procurement reports
+* Performance analytics
+* Dashboard statistics
+* Excel report export
+
+### Supply Chain Analytics
+
+* Supplier analysis
+* Order status analysis
+* Product category analysis
+* Compliance analysis
+* Defective-unit analysis
+* Supply-chain dashboard
 
 ---
 
@@ -34,19 +100,34 @@ The system provides data-driven insights into vendor reliability and procurement
 
 ### Frontend
 
+The frontend is developed using **Angular** and provides the user interface for managing vendors, procurement, purchase orders, reports, notifications, and analytics.
+
+**Technologies:**
+
 * Angular
 * TypeScript
 * HTML5
 * CSS3
 * Chart.js
+* Angular Router
+* Angular HTTP Client
+* Route Guards
+* HTTP Interceptors
 
 ### Backend
+
+The backend is developed using **Python FastAPI** and provides REST APIs, authentication, business logic, database operations, reliability calculations, reports, and analytics.
+
+**Technologies:**
 
 * Python
 * FastAPI
 * SQLAlchemy
 * REST APIs
 * JWT Authentication
+* Role-Based Access Control
+* ReportLab
+* OpenPyXL
 
 ### Database
 
@@ -57,19 +138,20 @@ The system provides data-driven insights into vendor reliability and procurement
 * Visual Studio Code
 * Git
 * GitHub
+* Swagger / OpenAPI
 
 ---
 
 ## Vendor Reliability Scoring
 
-The platform calculates vendor reliability using four performance factors:
+VRIP evaluates vendor reliability using four major performance factors:
 
-* Delivery Score
-* Quality Score
-* Payment Score
-* Compliance Score
+1. **Delivery Score**
+2. **Quality Score**
+3. **Payment Score**
+4. **Compliance Score**
 
-The overall reliability score is calculated based on the average of these factors.
+The overall reliability score is calculated using the average of these performance scores.
 
 ### Risk Classification
 
@@ -81,47 +163,23 @@ The overall reliability score is calculated based on the average of these factor
 
 ---
 
-## System Modules
+## System Architecture
 
-### 1. Authentication and Authorization
-
-Provides secure user registration, login, JWT-based authentication, and role-based access control.
-
-### 2. Vendor Management
-
-Allows users to register, view, update, and monitor vendor information and reliability performance.
-
-### 3. Procurement Management
-
-Manages procurement requests, budgets, quantities, vendors, and procurement status.
-
-### 4. Purchase Order Management
-
-Provides management of purchase orders, order details, delivery information, amounts, and order status.
-
-### 5. Vendor Performance
-
-Tracks vendor performance indicators and calculates reliability scores and risk levels.
-
-### 6. Contracts and Compliance
-
-Supports contract monitoring and vendor compliance tracking.
-
-### 7. Notifications and Alerts
-
-Displays system activities, risk warnings, critical alerts, and operational updates.
-
-### 8. Reports and Analytics
-
-Provides reports and analytical information for vendor and procurement performance.
-
-### 9. Supply Chain Analytics
-
-Provides insights into supplier orders, order status, product categories, compliance, and defective units.
-
-### 10. Audit Logs
-
-Maintains records of important system activities and user actions.
+```text
+                    VRIP PLATFORM
+                         |
+          +--------------+--------------+
+          |                             |
+      Angular                       FastAPI
+      Frontend                      Backend
+          |                             |
+          |                       REST APIs
+          |                             |
+          +-------------+---------------+
+                        |
+                    PostgreSQL
+                     Database
+```
 
 ---
 
@@ -148,6 +206,7 @@ VRIP-Vendor-Reliability-Intelligence-Platform/
 │   │   ├── app/
 │   │   ├── assets/
 │   │   └── ...
+│   │
 │   ├── package.json
 │   └── angular.json
 │
@@ -157,11 +216,11 @@ VRIP-Vendor-Reliability-Intelligence-Platform/
 
 ---
 
-## Installation and Setup
+## Installation & Setup
 
 ### Prerequisites
 
-Make sure the following are installed:
+Install the following software before running the project:
 
 * Python 3.12+
 * Node.js
@@ -173,19 +232,25 @@ Make sure the following are installed:
 
 ## Backend Setup
 
-Open a terminal in the project root and run:
+Open a terminal and navigate to the backend directory:
 
 ```bash
 cd backend
 ```
 
-Create and activate a virtual environment:
+Create a virtual environment:
 
 ```bash
 python -m venv venv
 ```
 
-Install the required dependencies:
+Activate the virtual environment on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -197,7 +262,7 @@ Start the FastAPI server:
 python -m uvicorn app.main:app --reload
 ```
 
-The backend will be available at:
+Backend URL:
 
 ```text
 http://127.0.0.1:8000
@@ -213,7 +278,7 @@ http://127.0.0.1:8000/docs
 
 ## Frontend Setup
 
-Open another terminal:
+Open another terminal and navigate to the frontend:
 
 ```bash
 cd frontend
@@ -231,7 +296,7 @@ Start the Angular development server:
 ng serve
 ```
 
-The frontend will be available at:
+Frontend URL:
 
 ```text
 http://localhost:4200
@@ -239,61 +304,82 @@ http://localhost:4200
 
 ---
 
-## Application Workflow
+## Application Modules
 
 ```text
-User Login
-    ↓
+Login / Registration
+        ↓
 Dashboard
-    ↓
+        ↓
 Vendor Management
-    ↓
-Vendor Reliability Evaluation
-    ↓
-Risk Classification
-    ↓
+        ↓
+Vendor Reliability & Risk
+        ↓
 Procurement Management
-    ↓
-Purchase Order Management
-    ↓
-Performance & Compliance Monitoring
-    ↓
+        ↓
+Purchase Orders
+        ↓
+Performance & Compliance
+        ↓
 Reports & Analytics
-    ↓
-Supply Chain Insights
+        ↓
+Notifications & Audit Logs
+        ↓
+Supply Chain Analytics
 ```
 
 ---
 
-## Project Objectives
+## Security
 
-* Centralize vendor and procurement information.
-* Monitor vendor reliability and performance.
-* Identify vendor risk levels using performance scores.
-* Improve procurement visibility.
-* Track purchase orders and supplier activities.
-* Monitor compliance and operational performance.
-* Provide analytical insights through dashboards and reports.
-* Support data-driven procurement management.
+The application includes:
+
+* JWT-based authentication
+* Protected API endpoints
+* Role-Based Access Control
+* Angular route guards
+* HTTP authentication interceptor
+* Secure password authentication
+* User authorization
+
+---
+
+## Reporting & Analytics
+
+The platform provides analytical information for:
+
+* Total vendors
+* Vendor risk levels
+* Procurement activities
+* Purchase orders
+* Vendor performance
+* Compliance
+* Order status
+* Supplier performance
+* Defective units
+* Supply-chain activities
+
+Reports can also be exported for further analysis.
 
 ---
 
 ## Future Enhancements
 
 * Cloud deployment
-* Advanced predictive risk analytics
-* Automated email notifications
 * AI-based vendor risk prediction
-* Advanced procurement forecasting
-* Integration with external ERP systems
-* Mobile-responsive enhancements
-* Automated report scheduling
+* Predictive procurement analytics
+* Automated email notifications
+* Advanced supplier forecasting
+* ERP system integration
+* Mobile application
+* Advanced business intelligence dashboards
 
 ---
 
-## Project Repository
+## Repository
 
-**GitHub:**
+**GitHub Repository:**
+
 https://github.com/Hrishi18162/VRIP-Vendor-Reliability-Intelligence-Platform
 
 ---
@@ -302,5 +388,8 @@ https://github.com/Hrishi18162/VRIP-Vendor-Reliability-Intelligence-Platform
 
 **Hrishitha Kotte**
 
-Vendor Reliability Intelligence Platform
-Full Stack Development Project
+**Project:** Vendor Reliability Intelligence Platform (VRIP)
+
+**Technology:** Angular + FastAPI + PostgreSQL
+
+**Project Type:** Full-Stack Web Application
